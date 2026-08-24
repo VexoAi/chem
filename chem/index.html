@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Smart Classroom — Visual Science Learning</title>
+  <meta name="description" content="AI Smart Classroom - Teacher speech recognition, keyword detection, and pre-built educational animation matching.">
+  
+  <!-- Modern Typography: Google Fonts Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/screens.css">
+</head>
+<body class="dark-theme">
+  <!-- Top App Navigation Header -->
+  <header class="app-header">
+    <div class="header-left brand-section" id="nav-brand" style="cursor: pointer;" title="Back to Home">
+      <div class="brand-logo-icon">🏫</div>
+      <div class="brand-text-wrap">
+        <h1 class="brand-title">AI Smart Classroom</h1>
+        <span class="brand-subtitle">Learn • Visualize • Understand</span>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="header-nav-breadcrumbs" id="header-breadcrumbs">
+        <span class="crumb" id="crumb-home">Home</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="platform-badge">
+        <span class="live-dot"></span> AI Smart Classroom Active
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Multi-Screen App Container -->
+  <main class="app-main-container">
+
+    <!-- ================================================================= -->
+    <!-- PAGE 1 — WELCOME TO CLASSROOM (Landing Home Screen)               -->
+    <!-- ================================================================= -->
+    <section id="screen-welcome" class="app-screen active">
+      <div class="welcome-hero-banner">
+        <div class="hero-badge">🎓 AI-Powered Smart Learning Platform</div>
+        <h2 class="hero-main-heading">Welcome to Classroom</h2>
+        <p class="hero-tagline">"Learn. Visualize. Understand."</p>
+        <p class="hero-instruction">
+          Teacher speaks → AI detects keywords → recommends the exact matching Chemistry animation with step-by-step visual lessons and narration.
+        </p>
+
+        <div class="hero-cta-wrap">
+          <button class="btn-hero-start" id="btn-welcome-start">
+            <span>Start Learning</span>
+            <span class="arrow-icon">→</span>
+          </button>
+        </div>
+
+        <!-- Quick Feature Highlights -->
+        <div class="welcome-features-grid">
+          <div class="feature-item">
+            <span class="feat-icon">🎤</span>
+            <div class="feat-text">
+              <strong>Speech Keyword Detection</strong>
+              <p>Teacher speaks naturally → AI matches the exact pre-built animation</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🎬</span>
+            <div class="feat-text">
+              <strong>60 FPS Visual Simulations</strong>
+              <p>Step-by-step dynamic particle, atomic & molecular animations</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🎙️</span>
+            <div class="feat-text">
+              <strong>Teacher Voice & Captions</strong>
+              <p>Synchronized audio narration, highlighted concepts & subtitles</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 2 — SUBJECT SELECTION (6 Subject Cards)                      -->
+    <!-- ================================================================= -->
+    <section id="screen-subjects" class="app-screen">
+      <div class="screen-page-header">
+        <button class="btn-back-nav" id="btn-back-to-welcome">
+          ← Back to Home
+        </button>
+        <div class="header-titles">
+          <h2 class="page-title">📚 Select Subject</h2>
+          <p class="page-subtitle">Choose a subject module to begin interactive visual learning</p>
+        </div>
+      </div>
+
+      <!-- 6 Subject Cards Grid -->
+      <div class="subjects-grid-container">
+        <!-- 1. Chemistry (Active) -->
+        <div class="subject-card active-subject" id="card-subject-chemistry" data-subject="chemistry">
+          <div class="subject-card-glow"></div>
+          <div class="subject-card-icon-wrap">
+            <span class="subject-icon">🧪</span>
+          </div>
+          <div class="subject-card-info">
+            <h3 class="subject-card-title">Chemistry</h3>
+            <p class="subject-card-desc">Atoms, chemical reactions, acids & bases, quantum orbitals, bonds, and thermodynamics.</p>
+            <div class="subject-card-badge status-ready">✓ 10 Lessons Ready</div>
+          </div>
+          <div class="subject-card-action">
+            <span class="btn-enter-subject">Enter Classroom →</span>
+          </div>
+        </div>
+
+        <!-- 2. Mathematics (Coming Soon) -->
+        <div class="subject-card coming-soon" data-subject="mathematics" data-title="Mathematics">
+          <div class="subject-card-icon-wrap">
+            <span class="subject-icon">📐</span>
+          </div>
+          <div class="subject-card-info">
+            <h3 class="subject-card-title">Mathematics</h3>
+            <p class="subject-card-desc">Algebra, geometry, calculus, trigonometry, and 3D visual functions.</p>
+            <div class="subject-card-badge status-soon">Coming Soon</div>
+          </div>
+        </div>
+
+        <!-- 3. History (Coming Soon) -->
+        <div class="subject-card coming-soon" data-subject="history" data-title="History">
+          <div class="subject-card-icon-wrap">
+            <span class="subject-icon">📜</span>
+          </div>
+          <div class="subject-card-info">
+            <h3 class="subject-card-title">History</h3>
+            <p class="subject-card-desc">World civilizations, historical timelines, revolutions, and archives.</p>
+            <div class="subject-card-badge status-soon">Coming Soon</div>
+          </div>
+        </div>
+
+        <!-- 4. Biology (Coming Soon) -->
+        <div class="subject-card coming-soon" data-subject="biology" data-title="Biology">
+          <div class="subject-card-icon-wrap">
+            <span class="subject-icon">🧬</span>
+          </div>
+          <div class="subject-card-info">
+            <h3 class="subject-card-title">Biology</h3>
+            <p class="subject-card-desc">Cell structure, genetics, human anatomy, ecosystems, and evolution.</p>
+            <div class="subject-card-badge status-soon">Coming Soon</div>
+          </div>
+        </div>
+
+        <!-- 5. English (Coming Soon) -->
+        <div class="subject-card coming-soon" data-subject="english" data-title="English">
+          <div class="subject-card-icon-wrap">
+            <span class="subject-icon">📖</span>
+          </div>
+          <div class="subject-card-info">
+            <h3 class="subject-card-title">English</h3>
+            <p class="subject-card-desc">Grammar rules, literature analysis, vocabulary, and poetry structures.</p>
+            <div class="subject-card-badge status-soon">Coming Soon</div>
+          </div>
+        </div>
+
+        <!-- 6. Physics (Coming Soon) -->
+        <div class="subject-card coming-soon" data-subject="physics" data-title="Physics">
+          <div class="subject-card-icon-wrap">
+            <span class="subject-icon">⚡</span>
+          </div>
+          <div class="subject-card-info">
+            <h3 class="subject-card-title">Physics</h3>
+            <p class="subject-card-desc">Mechanics, electromagnetism, optics, wave dynamics, and relativity.</p>
+            <div class="subject-card-badge status-soon">Coming Soon</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 3 — CHEMISTRY CLASSROOM (School & College Tracks + Voice Mode) -->
+    <!-- ================================================================= -->
+    <section id="screen-chemistry" class="app-screen">
+      <div class="screen-page-header">
+        <button class="btn-back-nav" id="btn-back-to-subjects">
+          ← Back to Subjects
+        </button>
+        <div class="header-titles">
+          <h2 class="page-title">🧪 Chemistry Classroom</h2>
+          <p class="page-subtitle">Speak your explanation or select a topic to find and play the exact Chemistry animation</p>
+        </div>
+      </div>
+
+      <!-- Teacher Voice Mode Banner Callout -->
+      <div class="teacher-speech-banner-card">
+        <div class="speech-banner-icon">👨‍🏫</div>
+        <div class="speech-banner-content">
+          <div class="speech-banner-badge">🎙️ AI TEACHER SPEECH ANALYSIS MODE</div>
+          <h3 class="speech-banner-title">Speak Your Chemistry Explanation</h3>
+          <p class="speech-banner-desc">
+            Click <strong>Start Teacher Analysis</strong> below, speak naturally about any chemistry concept, and the system will detect keywords and recommend the exact pre-built animation!
+          </p>
+        </div>
+        <div class="speech-banner-action">
+          <button class="btn-primary-large btn-banner-voice" id="btn-open-speech-podium">
+            <span>🎤</span> START TEACHER ANALYSIS
+          </button>
+        </div>
+      </div>
+
+      <!-- Two Large Columns Layout (School vs College) -->
+      <div class="chemistry-two-columns-layout">
+        
+        <!-- Left Section: 🏫 SCHOOL CHEMISTRY (5 Topics) -->
+        <div class="classroom-column school-column">
+          <div class="column-header">
+            <div class="column-badge school">🏫 SCHOOL CHEMISTRY</div>
+            <h3 class="column-title">Foundational Concepts</h3>
+            <p class="column-desc">5 animated topics for secondary school students (Grades 8–10)</p>
+          </div>
+          <div class="topics-cards-grid" id="grid-school-topics">
+            <!-- 1. Structure of an Atom -->
+            <div class="topic-classroom-card" data-lesson-id="school-atomic-structure">
+              <div class="topic-icon-wrap">⚛️</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">1. Structure of an Atom</h4>
+                <p class="topic-card-desc">Protons, neutrons, electrons, central nucleus & orbiting electron shells.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill school">School</span>
+                  <span class="meta-pill">Atom → Nucleus → Electrons</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+
+            <!-- 2. Chemical Reactions -->
+            <div class="topic-classroom-card" data-lesson-id="school-chemical-reactions">
+              <div class="topic-icon-wrap">⚗️</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">2. Chemical Reactions</h4>
+                <p class="topic-card-desc">Reactants colliding, chemical bond rearrangement, and product formation.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill school">School</span>
+                  <span class="meta-pill">Reactants → Collision → Products</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+
+            <!-- 3. Acids, Bases and Salts -->
+            <div class="topic-classroom-card" data-lesson-id="school-acids-bases">
+              <div class="topic-icon-wrap">🧪</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">3. Acids, Bases and Salts</h4>
+                <p class="topic-card-desc">H⁺ and OH⁻ ions, full 0–14 pH scale, and acid-base neutralization.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill school">School</span>
+                  <span class="meta-pill">Acid → pH Scale → Neutralization</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+
+            <!-- 4. Physical and Chemical Changes -->
+            <div class="topic-classroom-card" data-lesson-id="school-physical-chemical-changes">
+              <div class="topic-icon-wrap">🔥</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">4. Physical and Chemical Changes</h4>
+                <p class="topic-card-desc">Reversible state transitions (Solid → Liquid → Gas) vs irreversible chemical changes.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill school">School</span>
+                  <span class="meta-pill">Phase Change vs Rusting/Combustion</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+
+            <!-- 5. Periodic Table and Elements -->
+            <div class="topic-classroom-card" data-lesson-id="school-periodic-table">
+              <div class="topic-icon-wrap">🔬</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">5. Periodic Table and Elements</h4>
+                <p class="topic-card-desc">Interactive periodic grid: Groups, Periods, Metals, Non-metals, and Metalloids.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill school">School</span>
+                  <span class="meta-pill">Groups → Periods → Metals</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Section: 🎓 COLLEGE CHEMISTRY (5 Topics) -->
+        <div class="classroom-column college-column">
+          <div class="column-header">
+            <div class="column-badge college">🎓 COLLEGE CHEMISTRY</div>
+            <h3 class="column-title">Advanced Higher Concepts</h3>
+            <p class="column-desc">5 advanced animated topics for high school & college undergraduates</p>
+          </div>
+          <div class="topics-cards-grid" id="grid-college-topics">
+            <!-- 6. Atomic Structure and Quantum Concepts -->
+            <div class="topic-classroom-card" data-lesson-id="college-atomic-quantum">
+              <div class="topic-icon-wrap">⚛️</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">6. Atomic Structure and Quantum Concepts</h4>
+                <p class="topic-card-desc">Wavefunctions, s/p/d/f orbitals, electron transitions, and quantum energy levels.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill college">College</span>
+                  <span class="meta-pill">Orbitals → Energy Transitions</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+
+            <!-- 7. Chemical Bonding and Molecular Structure -->
+            <div class="topic-classroom-card" data-lesson-id="college-chemical-bonding">
+              <div class="topic-icon-wrap">🔗</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">7. Chemical Bonding and Molecular Structure</h4>
+                <p class="topic-card-desc">Potential energy curves, ionic transfer, covalent orbital overlap, and VSEPR 3D shapes.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill college">College</span>
+                  <span class="meta-pill">Ionic → Covalent → VSEPR</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+
+            <!-- 8. Thermodynamics and Chemical Equilibrium -->
+            <div class="topic-classroom-card" data-lesson-id="college-thermodynamics">
+              <div class="topic-icon-wrap">🌡️</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">8. Thermodynamics and Chemical Equilibrium</h4>
+                <p class="topic-card-desc">Enthalpy (ΔH), Entropy (ΔS), Gibbs Free Energy (ΔG), and Le Chatelier equilibrium shifts.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill college">College</span>
+                  <span class="meta-pill">Enthalpy → Gibbs → Equilibrium</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+
+            <!-- 9. Electrochemistry and Redox Reactions -->
+            <div class="topic-classroom-card" data-lesson-id="college-electrochemistry">
+              <div class="topic-icon-wrap">🔋</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">9. Electrochemistry and Redox Reactions</h4>
+                <p class="topic-card-desc">Animated Galvanic Zn/Cu cell, anode oxidation, cathode reduction, wire flow & salt bridge.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill college">College</span>
+                  <span class="meta-pill">Redox → Galvanic Cell → Ions</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+
+            <!-- 10. Organic Chemistry and Functional Groups -->
+            <div class="topic-classroom-card" data-lesson-id="college-organic-chemistry">
+              <div class="topic-icon-wrap">🧬</div>
+              <div class="topic-card-body">
+                <h4 class="topic-card-title">10. Organic Chemistry and Functional Groups</h4>
+                <p class="topic-card-desc">3D carbon frameworks, alkanes/alkenes/alkynes, functional groups & reaction mechanisms.</p>
+                <div class="topic-card-meta">
+                  <span class="meta-pill level-pill college">College</span>
+                  <span class="meta-pill">Hydrocarbons → Functional Groups</span>
+                </div>
+              </div>
+              <span class="btn-start-label">Select / Teach →</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 3.5 — TEACHER SPEECH PODIUM (Live Speech Recognition)        -->
+    <!-- ================================================================= -->
+    <section id="screen-topic-podium" class="app-screen">
+      <div class="screen-page-header">
+        <button class="btn-back-nav" id="btn-podium-back">
+          ← Back to Chemistry Topics
+        </button>
+        <div class="header-titles">
+          <div class="podium-level-tag school" id="podium-level-badge">🏫 TEACHER VOICE ANALYSIS</div>
+          <h2 class="page-title" id="podium-topic-title">🎤 TEACHER SPEECH RECOGNITION PODIUM</h2>
+        </div>
+      </div>
+
+      <div class="teacher-podium-container">
+        <!-- Teacher Instructions Card -->
+        <div class="podium-instruction-card">
+          <div class="instruction-icon">👨‍🏫</div>
+          <div class="instruction-content">
+            <h3>Teacher Voice Input Mode</h3>
+            <p class="instruction-lead">"Explain the concept naturally using your voice."</p>
+            <p class="instruction-desc">
+              The system will listen to your explanation, extract Chemistry keywords (e.g. <em>protons, neutrons, electrons, nucleus, reactions, pH</em>), and match the exact pre-built animation from the library.
+            </p>
+          </div>
+        </div>
+
+        <!-- Microphone Permission / Error Alert Banner -->
+        <div id="mic-error-banner" class="mic-alert-banner hidden">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-content">
+            <h4 class="alert-title">Microphone Access Notice</h4>
+            <p class="alert-desc" id="mic-error-message">Please allow microphone access in your browser settings.</p>
+          </div>
+          <div class="alert-actions">
+            <button class="btn-tool" id="btn-mic-try-again">Try Again</button>
+            <button class="btn-tool" id="btn-mic-use-manual">Use Manual Transcript</button>
+          </div>
+        </div>
+
+        <!-- Live Microphone & Transcript Podium Card -->
+        <div class="speech-podium-card">
+          <div class="podium-card-header">
+            <div class="mic-status idle" id="mic-status-indicator">
+              <span class="pulse-dot idle"></span> 🎤 Ready to listen
+            </div>
+            <div class="speech-tools">
+              <!-- Speech Language Dropdown defaulting to en-IN -->
+              <select id="select-speech-lang" class="lang-dropdown" title="Speech Recognition Accent">
+                <option value="en-IN" selected>🇮🇳 English (India)</option>
+                <option value="en-US">🇺🇸 English (US)</option>
+                <option value="en-GB">🇬🇧 English (UK)</option>
+              </select>
+
+              <button class="btn-tool" id="btn-toggle-manual" title="Type transcript manually">
+                ⌨️ Manual Transcript
+              </button>
+
+              <button class="btn-tool" id="btn-test-voice-system" title="Developer demo test phrases">
+                🧪 Test Voice System
+              </button>
+
+              <button class="btn-tool" id="btn-restart-speech" title="Clear and restart transcript">
+                🔄 Start Again
+              </button>
+            </div>
+          </div>
+
+          <!-- Test Voice System Dropdown Menu with exact phrases from prompt -->
+          <div id="test-voice-dropdown" class="test-voice-menu hidden">
+            <div class="menu-title">Select a test phrase to simulate instant teacher speech:</div>
+            <button class="test-phrase-btn" data-phrase="Today I am going to explain the structure of an atom. The atom contains a nucleus with protons and neutrons, and electrons move around the nucleus.">
+              ⚛️ "Today I am going to explain the structure of an atom. The atom contains a nucleus with protons and neutrons, and electrons move around the nucleus."
+            </button>
+            <button class="test-phrase-btn" data-phrase="Today I am going to explain electron transfer between sodium and chlorine.">
+              🔗 "Today I am going to explain electron transfer between sodium and chlorine."
+            </button>
+            <button class="test-phrase-btn" data-phrase="Chemical reaction where reactants collide, bonds break, and products form.">
+              ⚗️ "Chemical reaction where reactants collide, bonds break, and products form."
+            </button>
+            <button class="test-phrase-btn" data-phrase="Explain acids, bases, pH scale, and neutralization forming salt and water.">
+              🧪 "Explain acids, bases, pH scale, and neutralization forming salt and water."
+            </button>
+            <button class="test-phrase-btn" data-phrase="Physical change of ice melting to water compared to chemical change of iron rusting into new substance.">
+              🔥 "Physical change of ice melting to water compared to chemical change of iron rusting."
+            </button>
+            <button class="test-phrase-btn" data-phrase="Explain the periodic table of elements with groups, periods, metals, and nonmetals.">
+              🔬 "Explain the periodic table of elements with groups, periods, metals, and nonmetals."
+            </button>
+          </div>
+
+          <!-- Collapsible Manual Input Fallback -->
+          <div id="manual-transcript-section" class="manual-input-box hidden">
+            <label class="manual-input-label">Enter what the teacher explained:</label>
+            <textarea id="manual-speech-input" class="manual-textarea" placeholder="Type or paste the teacher's explanation here (e.g. Today I am going to explain the structure of an atom. The atom contains a nucleus with protons and neutrons, and electrons move around the nucleus...)"></textarea>
+            <div class="manual-actions">
+              <button class="btn-primary-large" id="btn-analyze-manual">
+                <span>🧠</span> ANALYZE TRANSCRIPT
+              </button>
+              <button class="btn-secondary-action" id="btn-cancel-manual">Cancel</button>
+            </div>
+          </div>
+
+          <!-- Live Speech Transcript Box -->
+          <div class="transcript-display-area">
+            <div class="transcript-label">LIVE TEACHER SPEECH:</div>
+            <div class="transcript-content" id="live-speech-box">
+              <span class="transcript-placeholder">
+                Teacher explanation will appear here live as you speak... Click "START TEACHER ANALYSIS" below.
+              </span>
+            </div>
+          </div>
+
+          <!-- Podium Action Controls -->
+          <div class="podium-action-bar">
+            <button class="btn-primary-large btn-start-analysis" id="btn-start-teacher-analysis">
+              <span class="btn-icon">🎤</span> START TEACHER ANALYSIS
+            </button>
+            <button class="btn-primary-large btn-stop-analysis hidden" id="btn-stop-analysis">
+              <span class="btn-icon">⏹</span> STOP
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 3.6 — AI ANALYSIS COMPLETE & EXACT MATCH RECOMMENDATION     -->
+    <!-- ================================================================= -->
+    <section id="screen-recommendation" class="app-screen">
+      <div class="recommendation-result-container">
+        <!-- Teacher Explanation Analyzed Summary Card -->
+        <div class="analysis-summary-card" id="analysis-summary-box">
+          <div class="summary-header-row">
+            <div class="summary-title-wrap">
+              <span class="brain-icon">🧠</span>
+              <h2 class="summary-title">TEACHER EXPLANATION ANALYZED</h2>
+            </div>
+            <span class="analysis-time-badge" id="rec-analysis-duration">&lt; 30 ms</span>
+          </div>
+
+          <div class="summary-meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">Subject:</span>
+              <strong class="meta-val">Chemistry</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Detected Topic:</span>
+              <strong class="meta-val" id="rec-detected-topic">Structure of an Atom</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Level:</span>
+              <strong class="meta-val" id="rec-detected-level">School Chemistry</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommended Lesson Card -->
+        <div class="recommendation-card">
+          <div class="rec-banner-badge exact-match" id="rec-banner-badge">
+            🎬 EXACT MATCH FOUND
+          </div>
+
+          <div class="rec-card-header">
+            <div class="rec-title-group">
+              <span class="rec-level-badge school" id="rec-level-tag">🏫 School Chemistry</span>
+              <h2 class="rec-lesson-title" id="rec-title">Structure of an Atom</h2>
+            </div>
+            <div class="rec-score-pill exact" id="rec-match-score">100% MATCH</div>
+          </div>
+
+          <div class="rec-card-body">
+            <p class="rec-description" id="rec-description">
+              Animated 2D visual explanation of protons, neutrons, electrons, central nucleus, and electron shells with synchronized AI teacher narration.
+            </p>
+
+            <!-- Detected Concepts Checklist -->
+            <div class="rec-concepts-section">
+              <div class="rec-section-title">DETECTED CONCEPTS:</div>
+              <div class="concepts-checklist-grid" id="rec-concepts-list">
+                <!-- Populated dynamically: ✓ Atom, ✓ Nucleus, ✓ Proton, ✓ Neutron, ✓ Electron -->
+              </div>
+            </div>
+
+            <!-- Matched Keywords -->
+            <div class="rec-keywords-section">
+              <div class="rec-section-title">MATCHED CHEMISTRY KEYWORDS & PHRASES:</div>
+              <div class="keywords-flex-wrap" id="rec-keywords-list">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions: Teacher explicitly clicks Play to start -->
+          <div class="rec-card-actions">
+            <button class="btn-primary-large btn-play-lesson" id="btn-play-recommended">
+              <span class="btn-icon">▶</span> PLAY LESSON
+            </button>
+            <button class="btn-secondary-action" id="btn-analyze-again">
+              <span>🔄</span> Analyze Again
+            </button>
+            <button class="btn-secondary-action" id="btn-rec-back-classroom">
+              <span>📚</span> All Topics
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 4 — TOPIC VIDEO / LESSON PLAYER STAGE                        -->
+    <!-- ================================================================= -->
+    <section id="screen-topic-lesson" class="app-screen">
+      <div class="player-stage-header">
+        <button class="btn-back-nav" id="btn-back-to-chemistry">
+          ← Back to Chemistry Topics
+        </button>
+        <div class="player-title-info">
+          <div class="stage-tag-wrap">
+            <span class="stage-tag" id="lesson-level-tag">🏫 SCHOOL CHEMISTRY</span>
+            <span class="stage-tag-category">CHEMISTRY ANIMATION</span>
+          </div>
+          <h2 class="stage-step-heading" id="lesson-topic-heading">🧪 1. Structure of an Atom</h2>
+        </div>
+      </div>
+
+      <div class="player-viewport-layout">
+        <!-- Central Animated Video / 60 FPS Simulation Box -->
+        <div class="player-canvas-container" id="player-screen-container">
+          <div class="canvas-badge-top">
+            <span class="live-dot"></span> 🎬 Visual Lesson Player
+          </div>
+
+          <!-- 60 FPS Canvas Simulation Engine -->
+          <canvas id="chem-canvas" class="chem-simulation-canvas"></canvas>
+
+          <!-- Interactive Concept Focus Card Overlay -->
+          <div id="concept-focus-card" class="concept-focus-overlay hidden">
+            <div class="focus-icon" id="focus-icon">⚛️</div>
+            <div class="focus-text">
+              <div class="focus-title" id="focus-title">Proton (p⁺)</div>
+              <div class="focus-desc" id="focus-desc">Positive electrical charge (+1) inside the nucleus.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Curriculum & Concept Breakdown Deck -->
+        <div class="player-side-deck">
+          <div class="curriculum-sequence-card">
+            <div class="sequence-header">
+              <span class="seq-title">Lesson Sequence</span>
+              <span class="seq-count" id="badge-step-progress">Step 1 of 7</span>
+            </div>
+            <div class="sequence-list" id="sequence-steps-list">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Concept Key Takeaways Card -->
+          <div class="lesson-info-card">
+            <h4 class="card-title">💡 Core Concepts Covered</h4>
+            <div class="concepts-tag-list" id="lesson-concepts-tags">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Subtitles & Master Video Controls Deck -->
+      <div class="player-bottom-deck">
+        <!-- Live Synchronized Subtitles / Scene Notes -->
+        <div class="caption-container" id="caption-container">
+          <div class="caption-header-row">
+            <span class="caption-label">📝 EDUCATIONAL CONCEPT EXPLANATION</span>
+            <span class="caption-step-tag" id="caption-step-counter">SCENE 1 OF 7</span>
+          </div>
+          <div class="caption-spoken-sentence" id="spoken-sentence-display">
+            <!-- Populated dynamically -->
+          </div>
+          <div class="caption-takeaway-card" id="takeaway-card">
+            <span class="takeaway-icon">💡</span>
+            <span class="takeaway-text" id="takeaway-text">Atom = Basic building block of all matter.</span>
+          </div>
+        </div>
+
+        <!-- Master Video Control Bar -->
+        <div class="video-controls-deck">
+          <!-- Timeline Scrubber -->
+          <div class="timeline-scrubber-bar">
+            <span class="time-display" id="time-elapsed-display">00:00</span>
+            <div class="scrubber-track" id="scrubber-track" role="slider" aria-label="Lesson Progress">
+              <div class="scrubber-fill" id="scrubber-fill"></div>
+              <div class="scrubber-handle" id="scrubber-handle"></div>
+            </div>
+            <span class="time-display" id="time-total-display">03:30</span>
+          </div>
+
+          <!-- Controls Action Row -->
+          <div class="controls-action-row">
+            <div class="controls-left">
+              <button class="ctrl-btn" id="btn-prev-step" title="Previous Step (←)">
+                <span>⏪</span> Prev Step
+              </button>
+              <button class="ctrl-btn btn-play-toggle" id="btn-play-pause" title="Play/Pause (Space)">
+                <span id="play-pause-icon">▶</span> <span id="play-pause-label">Play</span>
+              </button>
+              <button class="ctrl-btn" id="btn-next-step" title="Next Step (→)">
+                Next Step <span>⏩</span>
+              </button>
+              <button class="ctrl-btn" id="btn-restart-lesson" title="Restart Lesson (R)">
+                <span>🔄</span> Restart
+              </button>
+            </div>
+
+            <div class="controls-right">
+              <div class="volume-control-group">
+                <button class="ctrl-btn-icon" id="btn-voice-mute" title="Volume / Mute Toggle">
+                  <span id="mute-icon">🔊</span>
+                </button>
+                <input type="range" id="slider-volume" min="0" max="1" step="0.05" value="1" class="volume-slider" title="Volume Slider">
+              </div>
+
+              <div class="speed-control-group">
+                <label for="speed-select" class="speed-label">Speed:</label>
+                <select id="speed-select" class="speed-dropdown">
+                  <option value="0.75">0.75x</option>
+                  <option value="1.0" selected>1.0x</option>
+                  <option value="1.25">1.25x</option>
+                </select>
+              </div>
+
+              <button class="ctrl-btn-icon" id="btn-fullscreen-toggle" title="Toggle Fullscreen (F)">
+                <span>⛶</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Coming Soon Modal for other subjects -->
+  <div id="modal-coming-soon" class="coming-soon-modal hidden">
+    <div class="modal-card">
+      <div class="modal-icon">🚀</div>
+      <h3 class="modal-title"><span id="modal-subject-name">Subject</span> Classroom</h3>
+      <p class="modal-desc">This subject module is coming soon in the next release of AI Smart Classroom!</p>
+      <p class="modal-sub">For this prototype demonstration, <strong>Chemistry Classroom</strong> is 100% fully implemented with 10 interactive animated lessons.</p>
+      <button class="btn-primary-large" id="btn-modal-close">Got It</button>
+    </div>
+  </div>
+
+  <!-- Scripts: Modular Clean Architecture -->
+  <!-- School Lessons Data -->
+  <script src="src/lessons/school/atomicStructure.js"></script>
+  <script src="src/lessons/school/chemicalReactions.js"></script>
+  <script src="src/lessons/school/acidsBasesSalts.js"></script>
+  <script src="src/lessons/school/physicalChemicalChanges.js"></script>
+  <script src="src/lessons/school/periodicTable.js"></script>
+
+  <!-- College Lessons Data -->
+  <script src="src/lessons/college/atomicQuantum.js"></script>
+  <script src="src/lessons/college/chemicalBonding.js"></script>
+  <script src="src/lessons/college/thermodynamicsEquilibrium.js"></script>
+  <script src="src/lessons/college/electrochemistry.js"></script>
+  <script src="src/lessons/college/organicChemistry.js"></script>
+
+  <!-- Master Registry, Animation Library & AI Services -->
+  <script src="src/lessons/lessonRegistry.js"></script>
+  <script src="src/animations/animationLibrary.js"></script>
+  <script src="src/ai/speechRecognition.js"></script>
+  <script src="src/ai/conceptExtraction.js"></script>
+  <script src="src/narration/voiceEngine.js"></script>
+  <script src="src/animations/chemistryAnimationEngine.js"></script>
+
+  <!-- Master App -->
+  <script src="app.js"></script>
+</body>
+</html>
